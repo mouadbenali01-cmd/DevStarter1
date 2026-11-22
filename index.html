@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DevStarter helps beginner developers track learning goals, daily tasks, and project ideas.">
+  <title>DevStarter — Developer Learning Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">&lt;/&gt;</span> DevStarter</a>
+    <span class="top-note">Your learning journey, one step at a time.</span>
+  </header>
+
+  <main class="container">
+    <section class="welcome">
+      <div>
+        <p class="eyebrow">PERSONAL DEVELOPER WORKSPACE</p>
+        <h1>Build skills.<br><span>Track progress.</span></h1>
+        <p class="intro">A simple space to organize what you're learning and keep moving forward.</p>
+      </div>
+      <div class="welcome-icon" aria-hidden="true">✦</div>
+    </section>
+
+    <section class="stats" aria-label="Learning statistics">
+      <article class="stat-card"><span class="stat-label">Tasks completed</span><strong id="completed-count">0</strong><span class="stat-foot">Keep up the momentum</span></article>
+      <article class="stat-card"><span class="stat-label">Learning topics</span><strong id="topic-count">0</strong><span class="stat-foot">Skills you're exploring</span></article>
+      <article class="stat-card"><span class="stat-label">Project ideas</span><strong id="idea-count">0</strong><span class="stat-foot">Ideas worth building</span></article>
+    </section>
+
+    <section class="content-grid">
+      <article class="panel">
+        <div class="panel-heading"><div><p class="eyebrow">STAY CONSISTENT</p><h2>My tasks</h2></div><span class="panel-icon">✓</span></div>
+        <form id="task-form" class="inline-form">
+          <label class="sr-only" for="task-input">New learning task</label>
+          <input id="task-input" maxlength="100" placeholder="e.g. Practice JavaScript arrays" required>
+          <button type="submit">Add task</button>
+        </form>
+        <div class="task-progress" aria-label="Task completion progress">
+          <div class="progress-copy"><span>Overall progress</span><strong id="progress-label">0%</strong></div>
+          <div class="progress-track"><div id="progress-fill" class="progress-fill"></div></div>
+        </div>
+        <div class="task-filters" role="group" aria-label="Filter tasks">
+          <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter-button" type="button" data-filter="active" aria-pressed="false">Active</button>
+          <button class="filter-button" type="button" data-filter="completed" aria-pressed="false">Completed</button>
+        </div>
+        <ul id="task-list" class="task-list"></ul>
+        <p id="task-empty" class="empty-state">No tasks yet. Add one small goal to get started.</p>
+      </article>
+
+      <article class="panel">
+        <div class="panel-heading"><div><p class="eyebrow">KEEP EXPLORING</p><h2>Learning topics</h2></div><span class="panel-icon">⌘</span></div>
+        <form id="topic-form" class="inline-form">
+          <label class="sr-only" for="topic-input">New learning topic</label>
+          <input id="topic-input" maxlength="50" placeholder="e.g. HTML, Python, Git" required>
+          <button type="submit">Add</button>
+        </form>
+        <div id="topic-list" class="chip-list"></div>
+        <p id="topic-empty" class="empty-state">Add the technologies you're learning.</p>
+      </article>
+    </section>
+
+    <section class="panel ideas-panel">
+      <div class="panel-heading"><div><p class="eyebrow">THINK BIG, START SMALL</p><h2>Project ideas</h2></div><span class="panel-icon">✎</span></div>
+      <form id="idea-form" class="idea-form">
+        <label class="sr-only" for="idea-input">New project idea</label>
+        <input id="idea-input" maxlength="120" placeholder="e.g. Build a personal portfolio website" required>
+        <button type="submit">Save idea</button>
+      </form>
+      <ul id="idea-list" class="idea-list"></ul>
+      <p id="idea-empty" class="empty-state">Your next project could start with one idea.</p>
+    </section>
+
+    <footer>Made for curious minds. Your data stays in this browser.</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
